@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace PO5_RawData
+﻿namespace PO5_RawData
 {
-    class Program
+    using System;
+    class StartUp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
