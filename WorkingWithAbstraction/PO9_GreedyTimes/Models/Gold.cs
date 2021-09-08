@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PO9_GreedyTimes.Models
+﻿namespace PO9_GreedyTimes.Models
 {
-    class Gold
+    public class Gold
     {
+        private long amount;
+        public long Amount
+        {
+            get => this.amount;
+        }
+
+        public void AddGold(long amount)
+        {
+            this.amount += amount;
+        }
     }
 }

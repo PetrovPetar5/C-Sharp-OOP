@@ -3,9 +3,9 @@
     public class Bag
     {
         private Gold gold;
-        private Currency currency;
+        private Cash cash;
         private Gem gem;
-        public Bag(int capacity)
+        public Bag(long capacity)
         {
             this.Capacity = capacity;
         }
@@ -18,11 +18,11 @@
         {
             get => this.gem;
         }
-        public Currency Currency
+        public Cash Currency
         {
-            get => this.currency;
+            get => this.cash;
         }
-        public int Capacity { get; }
+        public long Capacity { get; }
 
         public void AddGold(long curGoldAmount)
         {
@@ -44,24 +44,21 @@
                 }
             }
         }
-
         public void AddCurrency(long curCurrencyAmount)
         {
             var isReached = IsCapacityReached(curCurrencyAmount);
             if (!isReached)
             {
-                if (!(this.gem.Amount + curCurrencyAmount > this.gold.Amount))
+                if (!(this.cash.Amount + curCurrencyAmount > this.gem.Amount))
                 {
-                    this.gem.AddGem(curCurrencyAmount);
+                    this.cash.AddCurrency(curCurrencyAmount);
                 }
             }
         }
 
-
-
         private bool IsCapacityReached(long amount)
         {
-            if (amount + this.gold.Amount + this.gem.Amount + this.currency.Amount <= this.Capacity)
+            if (amount + this.gold.Amount + this.gem.Amount + this.cash.Amount <= this.Capacity)
             {
                 return false;
             }

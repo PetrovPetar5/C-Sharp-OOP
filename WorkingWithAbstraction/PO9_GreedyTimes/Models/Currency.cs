@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace PO9_GreedyTimes.Models
 {
-    class Currency
+    public class Cash
     {
+        private long amount;
+        private Dictionary<string, long> types;
+
+        private Cash()
+        {
+            this.types = new Dictionary<string, long>();
+        }
+
+        public long Amount
+        {
+            get => this.amount;
+        }
+
+        public void AddCurrency(long amount)
+        {
+            this.amount += amount;
+        }
     }
 }
